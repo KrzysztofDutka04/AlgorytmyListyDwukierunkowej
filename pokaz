@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+void Lista::pokaz() {
+    Wezel* biezacy = glowa;
+    while(biezacy != 0) {
+        cout << biezacy->dane << " ";
+        biezacy = biezacy->nastepny;
+    }
+    cout << endl;
+}
