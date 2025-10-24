@@ -1,0 +1,41 @@
+#include <iostream>
+#include "dodajPoczatek.cpp"
+#include "dodajKoniec.cpp"
+
+using namespace std;
+
+class Lista {
+    struct Wezel {
+        int dane;
+        Wezel* nastepny;
+        Wezel(int w) : dane(w), nastepny(0) {}
+    };
+
+    Wezel* glowa;
+
+public:
+    Lista();
+   
+    void pokaz() {
+    Wezel* biezacy = glowa;
+    while(biezacy != 0) {
+        cout << biezacy->dane << " ";
+        biezacy = biezacy->nastepny;
+    }
+    cout << endl;
+}
+};
+
+
+Lista::Lista() : glowa(0) {}
+
+int main() {
+    Lista lista;
+    lista.dodajNaPoczatek(3);
+    lista.dodajNaPoczatek(2);
+    lista.dodajNaPoczatek(1);
+    lista.dodajNaKoniec(4);
+    lista.dodajNaKoniec(5);
+    lista.pokaz();  // Wynik: 1 2 3 4 5
+    return 0;
+}
