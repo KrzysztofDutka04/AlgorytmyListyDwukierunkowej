@@ -22,6 +22,7 @@ public:
     void usunPodIndexem(int index);
     void pokaz();
     void pokazOdwrotnie();
+    void pokazNastepny(int index);
 };
 #include "dodajPoczatek.cpp"
 #include "dodajKoniec.cpp"
@@ -31,6 +32,7 @@ public:
 #include "usunIndex.cpp"
 #include "pokaz.cpp"
 #include "pokazOdwrotnie.cpp"
+#include "pokazNastepny.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -57,5 +59,7 @@ int main() {
     lista.pokaz();  // Wynik: 99 4
 
     lista.pokazOdwrotnie(); // Wynik: 4 99
+
+    lista.pokazNastepny(0); // Wynik: 4
     return 0;
 }
