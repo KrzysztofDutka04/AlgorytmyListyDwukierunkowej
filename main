@@ -15,7 +15,8 @@ class Lista {
 
 public:
     Lista();
-   
+    void dodajNaPoczatek(int w);
+    void dodajNaKoniec(int w);
     void pokaz() {
     Wezel* biezacy = glowa;
     while(biezacy != 0) {
