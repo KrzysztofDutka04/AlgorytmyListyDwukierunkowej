@@ -1,0 +1,12 @@
+void Lista::dodajNaKoniec(int w) {
+    Wezel* nowy = new Wezel(w);
+    if(glowa == 0) {
+        glowa = nowy;
+    } else {
+        Wezel* biezacy = glowa;
+        while(biezacy->nastepny != 0) {
+            biezacy = biezacy->nastepny;
+        }
+        biezacy->nastepny = nowy;
+    }
+}
