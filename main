@@ -21,6 +21,7 @@ public:
     void usunZKonca();
     void usunPodIndexem(int index);
     void pokaz();
+    void pokazOdwrotnie();
 };
 #include "dodajPoczatek.cpp"
 #include "dodajKoniec.cpp"
@@ -29,6 +30,7 @@ public:
 #include "usunKoniec.cpp"
 #include "usunIndex.cpp"
 #include "pokaz.cpp"
+#include "pokazOdwrotnie.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -53,5 +55,7 @@ int main() {
 
     lista.usunPodIndexem(1); // Usuwa element o indeksie 1
     lista.pokaz();  // Wynik: 99 4
+
+    lista.pokazOdwrotnie(); // Wynik: 4 99
     return 0;
 }
