@@ -24,6 +24,7 @@ public:
     void pokazOdwrotnie();
     void pokazNastepny(int index);
     void pokazPoprzedni(int index);
+    void wyczysc();
 };
 #include "dodajPoczatek.cpp"
 #include "dodajKoniec.cpp"
@@ -35,6 +36,7 @@ public:
 #include "pokazOdwrotnie.cpp"
 #include "pokazNastepny.cpp"
 #include "pokazPoprzedni.cpp"
+#include "wyczysc.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -65,5 +67,7 @@ int main() {
     lista.pokazNastepny(0); // Wynik: 4
 
     lista.pokazPoprzedni(1); // Wynik: 99
+
+    lista.wyczysc();
     return 0;
 }
