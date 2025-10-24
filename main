@@ -19,6 +19,7 @@ public:
     void dodajPodIndex(int index, int w);
     void usunZPoczatku();
     void usunZKonca();
+    void usunPodIndexem(int index);
     void pokaz() {
     Wezel* biezacy = glowa;
     while(biezacy != 0) {
@@ -33,6 +34,7 @@ public:
 #include "dodajIndex.cpp"
 #include "usunPoczatek.cpp"
 #include "usunKoniec.cpp"
+#include "usunIndex.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -50,9 +52,12 @@ int main() {
     lista.pokaz();  // Wynik: 2 99 3 4 5
 
     lista.usunZKonca();
-    lista.pokaz();  // Wynik: 1 2 99 3
+    lista.pokaz();  // Wynik: 2 99 3 4
 
     lista.usunZPoczatku();
-    lista.pokaz();  // Wynik: 99 3 4 5
+    lista.pokaz();  // Wynik: 99 3 4 
+
+    lista.usunPodIndexem(1); // Usuwa element o indeksie 1
+    lista.pokaz();  // Wynik: 99 4
     return 0;
 }
