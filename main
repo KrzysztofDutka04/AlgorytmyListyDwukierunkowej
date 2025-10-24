@@ -23,6 +23,7 @@ public:
     void pokaz();
     void pokazOdwrotnie();
     void pokazNastepny(int index);
+    void pokazPoprzedni(int index);
 };
 #include "dodajPoczatek.cpp"
 #include "dodajKoniec.cpp"
@@ -33,6 +34,7 @@ public:
 #include "pokaz.cpp"
 #include "pokazOdwrotnie.cpp"
 #include "pokazNastepny.cpp"
+#include "pokazPoprzedni.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -61,5 +63,7 @@ int main() {
     lista.pokazOdwrotnie(); // Wynik: 4 99
 
     lista.pokazNastepny(0); // Wynik: 4
+
+    lista.pokazPoprzedni(1); // Wynik: 99
     return 0;
 }
