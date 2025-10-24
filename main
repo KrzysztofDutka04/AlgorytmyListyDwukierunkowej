@@ -18,6 +18,7 @@ public:
     void dodajNaKoniec(int w);
     void dodajPodIndex(int index, int w);
     void usunZPoczatku();
+    void usunZKonca();
     void pokaz() {
     Wezel* biezacy = glowa;
     while(biezacy != 0) {
@@ -31,6 +32,7 @@ public:
 #include "dodajKoniec.cpp"
 #include "dodajIndex.cpp"
 #include "usunPoczatek.cpp"
+#include "usunKoniec.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -43,8 +45,12 @@ int main() {
     lista.dodajNaKoniec(5);
     lista.dodajPodIndex(2, 99);
     lista.pokaz();  // Wynik: 1 2 99 3 4 5
+
     lista.usunZPoczatku();
     lista.pokaz();  // Wynik: 2 99 3 4 5
+
+    lista.usunZKonca();
+    lista.pokaz();  // Wynik: 1 2 99 3
 
     lista.usunZPoczatku();
     lista.pokaz();  // Wynik: 99 3 4 5
