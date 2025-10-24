@@ -1,0 +1,7 @@
+void Lista::wyczysc() {
+    while (glowa != 0) {
+        Wezel* temp = glowa;
+        glowa = glowa->nastepny;
+        delete temp;
+    }
+}
