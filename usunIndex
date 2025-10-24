@@ -1,0 +1,26 @@
+void Lista::usunPodIndexem(int index) {
+    if (glowa == 0 || index < 0) return;
+    
+    if (index == 0) {
+        usunZPoczatku();
+        return;
+    }
+    
+    Wezel* biezacy = glowa;
+    int licznik = 0;
+    
+    // Szukamy elementu PRZED tym do usunięcia
+    while (biezacy != 0 && licznik < index - 1) {
+        biezacy = biezacy->nastepny;
+        licznik++;
+    }
+    
+    // Sprawdzamy czy znaleźliśmy odpowiednią pozycję i czy następny element istnieje
+    if (biezacy == 0 || biezacy->nastepny == 0) {
+        return; // Indeks poza zakresem
+    }
+    
+    Wezel* doUsuniecia = biezacy->nastepny;
+    biezacy->nastepny = doUsuniecia->nastepny;
+    delete doUsuniecia;
+}
