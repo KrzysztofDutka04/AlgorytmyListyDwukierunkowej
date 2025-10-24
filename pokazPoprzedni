@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+void 
+
+Lista::pokazPoprzedni(int index) {
+    if (glowa == 0) {
+        
+
+cout << "Lista jest pusta" << endl;
+        return;
+    }
+    
+    if 
+
+(index < 0) {
+        cout << "Nieprawidłowy indeks" << endl;
+      
+
+  return;
+    }
+    
+    if (index == 0) {
+        cout << "Element o 
+
+indeksie 0 (" << glowa->dane << ") nie ma poprzedniego elementu" 
+
+<< endl;
+        return;
+    }
+    
+    Wezel* biezacy = glowa;
+    
+
+Wezel* poprzedni = 0;
+    int licznik = 0;
+    
+    // Szukamy 
+
+elementu o podanym indeksie i zapamiętujemy poprzedni
+    while 
+
+(biezacy != 0 && licznik < index) {
+        poprzedni = biezacy;
+   
+
+     biezacy = biezacy->nastepny;
+        licznik++;
+    }
+    
+    
+
+if (biezacy == 0) {
+        cout << "Indeks " << index << " jest 
+
+poza zakresem listy" << endl;
+    } else {
+        cout << 
+
+poprzedni->dane << endl;
+    }
+}
