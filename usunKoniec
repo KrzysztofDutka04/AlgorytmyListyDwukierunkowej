@@ -1,0 +1,18 @@
+void Lista::usunZKonca() {
+    if (glowa == 0) return;
+    
+    if (glowa->nastepny == 0) {
+        // Tylko jeden element w liście
+        delete glowa;
+        glowa = 0;
+        return;
+    }
+    
+    Wezel* biezacy = glowa;
+    while (biezacy->nastepny->nastepny != 0) {
+        biezacy = biezacy->nastepny;
+    }
+    
+    delete biezacy->nastepny;
+    biezacy->nastepny = 0;
+}
