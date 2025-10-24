@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+void 
+
+Lista::pokazOdwrotnie() {
+    if (glowa == 0) {
+        cout << 
+
+"Lista jest pusta" << endl;
+        return;
+    }
+    
+    // 
+
+Najpierw tworzymy tablicę z danymi
+    int rozmiar = 0;
+    Wezel* 
+
+biezacy = glowa;
+    
+    // Liczymy rozmiar listy
+    while 
+
+(biezacy != 0) {
+        rozmiar++;
+        biezacy = biezacy->nastepny;
+    }
+    
+    // Tworzymy tablicę i wypełniamy danymi
+    
+
+int* tablica = new int[rozmiar];
+    biezacy = glowa;
+    for (int 
+
+i = 0; i < rozmiar; i++) {
+        tablica[i] = biezacy->dane;
+     
+
+   biezacy = biezacy->nastepny;
+    }
+    
+    // Wyświetlamy od 
+
+końca
+    
+    for (int i = rozmiar - 1; i >= 0; i--) {
+        cout 
+
+<< tablica[i] << " ";
+    }
+    cout << endl;
+    
+    delete[] 
+
+tablica;
+}
