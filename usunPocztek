@@ -1,0 +1,7 @@
+void Lista::usunZPoczatku() {
+    if (glowa == 0) return;
+    
+    Wezel* temp = glowa;
+    glowa = glowa->nastepny;
+    delete temp;
+}
