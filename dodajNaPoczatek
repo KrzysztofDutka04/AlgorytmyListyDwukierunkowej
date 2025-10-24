@@ -1,0 +1,5 @@
+void Lista::dodajNaPoczatek(int w) {
+    Wezel* nowy = new Wezel(w);
+    nowy->nastepny = glowa;
+    glowa = nowy;
+}
