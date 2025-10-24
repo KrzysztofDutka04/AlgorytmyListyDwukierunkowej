@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+void Lista::pokazNastepny
+
+(int index) {
+    if (glowa == 0) {
+        cout << "Lista jest 
+
+pusta" << endl;
+        return;
+    }
+    
+    if (index < 0) {
+       
+
+ cout << "Nieprawidlowy indeks" << endl;
+        return;
+    }
+    
+  
+
+  Wezel* biezacy = glowa;
+    int licznik = 0;
+    
+    // Szukamy 
+
+elementu o podanym indeksie
+    while (biezacy != 0 && licznik < 
+
+index) {
+        biezacy = biezacy->nastepny;
+        licznik++;
+    
+
+}
+    
+    if (biezacy == 0) {
+        cout << "Indeks " << index << 
+
+" jest poza zakresem listy" << endl;
+    } else if (biezacy-
+
+>nastepny == 0) {
+        cout << "Element o indeksie " << index 
+
+<< " (" << biezacy->dane << ") nie ma nastepnego elementu" << 
+
+endl;
+    } else {
+        cout  << biezacy->nastepny->dane << 
+
+endl;
+    }
+}
