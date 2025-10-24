@@ -1,0 +1,24 @@
+void Lista::dodajPodIndex(int index, int w) {
+    if (index < 0) return;
+    
+    if (index == 0) {
+        dodajNaPoczatek(w);
+        return;
+    }
+    
+    Wezel* nowy = new Wezel(w);
+    Wezel* biezacy = glowa;
+    int licznik = 0;
+    
+    while (biezacy != 0 && licznik < index - 1) {
+        biezacy = biezacy->nastepny;
+        licznik++;
+    }
+    
+    if (biezacy == 0) {
+        dodajNaKoniec(w);
+    } else {
+        nowy->nastepny = biezacy->nastepny;
+        biezacy->nastepny = nowy;
+    }
+}
