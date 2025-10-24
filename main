@@ -1,6 +1,5 @@
 #include <iostream>
-#include "dodajPoczatek.cpp"
-#include "dodajKoniec.cpp"
+
 
 using namespace std;
 
@@ -17,6 +16,7 @@ public:
     Lista();
     void dodajNaPoczatek(int w);
     void dodajNaKoniec(int w);
+    void dodajPodIndex(int index, int w);
     void pokaz() {
     Wezel* biezacy = glowa;
     while(biezacy != 0) {
@@ -26,7 +26,9 @@ public:
     cout << endl;
 }
 };
-
+#include "dodajPoczatek.cpp"
+#include "dodajKoniec.cpp"
+#include "dodajIndex.cpp"
 
 Lista::Lista() : glowa(0) {}
 
@@ -37,6 +39,7 @@ int main() {
     lista.dodajNaPoczatek(1);
     lista.dodajNaKoniec(4);
     lista.dodajNaKoniec(5);
-    lista.pokaz();  // Wynik: 1 2 3 4 5
+    lista.dodajPodIndex(2, 99);
+    lista.pokaz();  // Wynik: 1 2 99 3 4 5
     return 0;
 }
